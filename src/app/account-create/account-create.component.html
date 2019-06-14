@@ -1,11 +1,67 @@
 <app-header appHeaderColor="dark-theme"></app-header>
 <section class="account-create">
-  <h1>Create Your Account</h1>
-  <h2>Signup is easy and only takes a few seconds</h2>
-  
-  <div class="account-create__form">
-    <form>
-     
-    </form>
+  <div class="account-create__container">
+    <h1 class="account-create__h1">Create Your Account</h1>
+    <h2 class="account-create__h2">Signup is easy and only takes a few seconds</h2>
+
+    <div class="account-create__form-container">
+      <div class="account-create__form-img">
+        <img src="../../assets/rocket-slant.png" alt="rocket img">
+      </div>
+      <form class="account-create__form" [formGroup]="createAccountForm" (ngSubmit)="onCreateAccount()">
+        <div class="form-group">
+          <label for="first_name">
+            First Name
+          </label>
+          <input type="text" class="account-create__form-control" id="first_name" formControlName="firstName">
+          <div *ngIf="createAccountForm.get('firstName').invalid && createAccountForm.get('firstName').touched" class="account-create__form-control-error">
+            This input field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="first_name">
+            Last Name
+          </label>
+          <input type="text" class="account-create__form-control" id="last_name" formControlName="lastName">
+          <div class="account-create__form-control-error" *ngIf="createAccountForm.get('lastName').invalid && createAccountForm.get('lastName').touched">
+            This input field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">
+            Phone Number
+          </label>
+          <input type="text" class="account-create__form-control" id="phone" formControlName="phone">
+          <div class="account-create__form-control-error" *ngIf="createAccountForm.get('phone').invalid && createAccountForm.get('phone').touched">
+            This input field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">
+            Choose a Password
+          </label>
+          <input type="password" class="account-create__form-control" id="password" formControlName="password">
+          <div class="account-create__form-control-error"
+            *ngIf="createAccountForm.get('password').invalid && createAccountForm.get('password').touched">
+              This input field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tos_agreement">
+            Do you agree to the
+            <a href="">terms and conditions?</a>
+          </label>
+          <input type="checkbox" class="account-create__check-box" id="tos_agreement"
+            formControlName="tosAgreement">
+          <div class="account-create__form-control-error"
+            *ngIf="createAccountForm.get('tosAgreement').invalid && createAccountForm.get('tosAgreement').touched && createAccountForm.get('tosAgreement').value !== true">
+            This input field is required
+          </div>
+        </div>
+        <button class="account-create__submit-btn" type="submit" [disabled]="createAccountForm.invalid">
+          Get Started
+        </button>
+      </form>
+    </div>
   </div>
 </section>
