@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AppState } from '../reducers';
-import { CreateAccount } from '../auth/auth.actions';
+import { AppState } from '../../reducers';
+import { CreateAccount } from '../auth.actions';
 
 @Component({
   selector: 'app-account-create',

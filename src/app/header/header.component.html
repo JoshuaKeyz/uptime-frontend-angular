@@ -1,25 +1,25 @@
 <header class="header">
   <div class="header__container">
-    <a routerLink="/" class="header__logo">UptimeMonitor</a>
+    <a routerLink="/home" class="header__logo">UptimeMonitor</a>
     <nav class="header__nav">
       <ul class="header__nav-container">
-        <li>
-          <a class="header__nav-link" routerLink="">home</a>
+        <li *ngIf="isLoggedIn">
+          <a class="header__nav-link" routerLink="/home">home</a>
         </li>
-        <li>
-          <a class="header__nav-link" routerLink="">signup</a>
+        <li *ngIf="!isLoggedIn">
+          <a class="header__nav-link" routerLink="/account-create">signup</a>
         </li>
-        <li>
-          <a class="header__nav-link" routerLink="">login</a>
+        <li *ngIf="!isLoggedIn">
+          <a class="header__nav-link" routerLink="/login">login</a>
         </li>
-        <li>
+        <li *ngIf="isLoggedIn">
           <a class="header__nav-link" routerLink="">dashboard</a>
         </li>
-        <li>
+        <li *ngIf="isLoggedIn">
           <a class="header__nav-link" routerLink="">account settings</a>
         </li>
-        <li>
-          <a class="header__nav-link" routerLink="">logout</a>
+        <li *ngIf="isLoggedIn">
+          <a class="header__nav-link" routerLink="/logout">logout</a>
         </li>
       </ul>
     </nav>

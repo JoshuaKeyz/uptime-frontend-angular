@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AccountCreateComponent } from './account-create/account-create.component';
+import { AccountCreateComponent } from './auth/account-create/account-create.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './auth/login/login.component';
+import { LogoutComponent } from './auth/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -10,12 +12,20 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'login', 
+    component: LoginComponent
+  },
+  {
     path: 'home', 
     component: HomeComponent
   },
   {
     path: 'account-create', 
     component: AccountCreateComponent
+  },
+  {
+    path: 'logout', 
+    component: LogoutComponent
   }
 ];
 

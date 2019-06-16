@@ -1,0 +1,24 @@
+<div class="login">
+  <app-header appHeaderColor="dark-theme"></app-header>
+  <section class="login__form">
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
+      <div class="form-group">
+        <label for="phone">
+          Phone Number
+        </label>
+        <input 
+          type="text" 
+          formControlName="phone"
+          class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          class="form-control"
+          formControlName="password">
+      </div>
+      <button class="btn-submit">Login</button>
+    </form>
+  </section>
+</div>
