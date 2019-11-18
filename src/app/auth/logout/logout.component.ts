@@ -13,14 +13,5 @@ export class LogoutComponent implements OnInit {
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    let id = this.store.select('auth').subscribe(state=>{
-      console.log(state);
-      const token = state.authToken.id;
-
-      this.store.dispatch(new LogoutRequest({tokenId: token}));
-    })
-    
-    
   }
-
 }

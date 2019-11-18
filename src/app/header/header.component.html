@@ -19,7 +19,10 @@
           <a class="header__nav-link" routerLink="">account settings</a>
         </li>
         <li *ngIf="isLoggedIn">
-          <a class="header__nav-link" routerLink="/logout">logout</a>
+          <a 
+            class="header__nav-link" 
+            (click)="logout()"
+            routerLink="/logout">logout</a>
         </li>
       </ul>
     </nav>

@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
   exports: [
     HeaderComponent,
     HeaderColorDirective,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
   ],
   imports: [
     CommonModule,
